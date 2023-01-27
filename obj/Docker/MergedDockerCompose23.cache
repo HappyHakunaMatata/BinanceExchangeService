@@ -1,0 +1,62 @@
+name: dockercompose4181385159422876510
+services:
+  ExchangeServiceDB:
+    container_name: ExchangeServiceDB
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Admin:0000
+    hostname: ExchangeServiceDB
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1433"
+      protocol: tcp
+  exchangeservice:
+    build:
+      context: /Users/main/Desktop/ExchangeService/ExchangeService
+      dockerfile: ExchangeService/Dockerfile
+    depends_on:
+      ExchangeServiceDB:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: exchangeservice
+    links:
+    - ExchangeServiceDB:ExchangeServiceDB
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 443
+      protocol: tcp
+    - mode: ingress
+      target: 63859
+      published: "443"
+      protocol: tcp
+    - mode: ingress
+      target: 63860
+      published: "80"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: /Users/main/.aspnet/https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /Users/main/.microsoft/usersecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: dockercompose4181385159422876510_default
