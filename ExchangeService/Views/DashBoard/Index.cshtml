@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="table table-hover">
+    @foreach (var i in Enumerable.Range(0, Model.Count))
+    {
+        <div class="container table-hover" id="table-@i">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th rowspan="1" colspan="2" id="side-@i"></th>
+                    </tr>
+                    <tr>
+                        <th scope="col" rowspan="1" colspan="1">Название</th>
+                        <th scope="col" rowspan="1" colspan="1">Значение</th>
+                    </tr>
+                </thead>
+                <tbody id="TableBody">
+                    <tr class="table-active">
+                        <th scope="row">Ticker name: </th>
+                        <td id="ticker-name-@i"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Base Coin: </th>
+                        <td id="base-name-@i"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Quote Coin: </th>
+                        <td id="quote-name-@i"></td>
+                    </tr>
+                    <tr class="table-primary">
+                        <th scope="row" id="amount-label-@i">Current amount: </th>
+                        <td id="coin-amount-@i"></td>
+                    </tr>
+                    <tr class="table-primary">
+                        <th scope="row">Avalible amount for order: </th>
+                        <td id="amount-for-order-@i"></td>
+                    </tr>
+                    <tr class="table-success">
+                        <th scope="row" id="estimate-label-@i">Estimate amount: </th>
+                        <td id="estimate-amount-@i"></td>
+                    </tr>
+                    <tr class="table-success">
+                        <th scope="row" id="previous-label-@i">Previous Amount amount: </th>
+                        <td id="previous-amount-@i"></td>
+                    </tr>
+                    <tr class="table-active" id="profit-container-@i">
+                        <th scope="row" id="profit-label-@i">Profit amount: </th>
+                        <td id="profit-@i"></td>
+                    </tr>
+                    <tr class="table-warning">
+                        <th scope="row">Average price: </th>
+                        <td id="market-price-@i"></td>
+                    </tr>
+                    <tr class="table-warning">
+                        <th scope="row" id="base-kline-label-@i">Change: </th>
+                        <td id="base-kline-change-@i"></td>
+                    </tr>
+                    <tr class="table-warning">
+                        <th scope="row" id="quote-kline-label-@i">Change: </th>
+                        <td id="quote-kline-change-@i"></td>
+                    </tr>
+                    <tr class="table-warning">
+                        <th scope="row">Kline range: </th>
+                        <td id="kline-range-@i"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+<div id="request"></div>
+<script>UpdateData();</script>

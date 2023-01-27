@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>b634ace1-c959-4577-a69a-de40d586474a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\Entity\" />
+    <None Remove="Controllers\" />
+    <None Remove="Services\Interfaces\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Pages\DashBoard\" />
+    <None Remove="EntityFramework" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="DataBase\" />
+    <None Remove="DataBase\Interfaces\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="DataBase\Initiate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Structures\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Implementations\Interfaces\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\DashBoard\" />
+    <Folder Include="DataBase\" />
+    <Folder Include="DataBase\Interfaces\" />
+    <Folder Include="DataBase\Initiate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20220927184057_Asset.cs" />
+    <Compile Remove="Migrations\20220927184057_Asset.Designer.cs" />
+    <Compile Remove="Migrations\AppDBContextModelSnapshot.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\DashBoard\ExchangeInfo.cshtml" />
+    <Content Remove="Views\DashBoard\Order.cshtml" />
+    <Content Remove="Views\DashBoard\_PartialView.cshtml" />
+  </ItemGroup>
+</Project>

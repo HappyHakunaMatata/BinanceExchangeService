@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  exchangeservice:
+    image: ${DOCKER_REGISTRY-}exchangeservice
+    build:
+      context: .
+      dockerfile: ExchangeService/Dockerfile
+    links:
+      - 'ExchangeServiceDB:ExchangeServiceDB'
+    depends_on:
+      - 'ExchangeServiceDB'
+    ports:
+      - '63859:443'
+      - '63860:80'
+
+
+  ExchangeServiceDB:
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Admin:0000
+    ports:
+      - '1433:1433'
+    container_name: ExchangeServiceDB
+    hostname: ExchangeServiceDB
+    image: 'mcr.microsoft.com/mssql/server:2022-latest'

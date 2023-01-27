@@ -1,0 +1,59 @@
+﻿<Properties StartupConfiguration="{235B2940-D0B7-405F-A8FE-972C425E1343}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExchangeService/Implementations/Realisations/OrderImplementation.cs">
+    <Files>
+      <File FileName="ExchangeService/wwwroot/js/site.js" />
+      <File FileName="ExchangeService/Controllers/DashBoardController.cs" Line="72" Column="26" />
+      <File FileName="ExchangeService/Views/DashBoard/Index.cshtml" />
+      <File FileName="ExchangeService/ViewModels/DashBoardViewModel.cs" />
+      <File FileName="ExchangeService/Data/data.txt" />
+      <File FileName="ExchangeService/Implementations/Abstractions/BaseImplementation.cs" />
+      <File FileName="ExchangeService/Program.cs" />
+      <File FileName="ExchangeService/Implementations/Abstractions/AbstractRequest.cs" Line="1" Column="1" />
+      <File FileName="ExchangeService/Implementations/Realisations/BinanceConcreateRequest.cs" Line="16" Column="34" />
+      <File FileName="ExchangeService/Implementations/Realisations/ConcreateOrder.cs" Line="1" Column="1" />
+      <File FileName="ExchangeService/Implementations/Realisations/ExchangeInfoImplementation.cs" Line="1" Column="1" />
+      <File FileName="ExchangeService/Implementations/Realisations/FeeImplementation.cs" Line="1" Column="1" />
+      <File FileName="ExchangeService/Implementations/Realisations/KlineImplementation.cs" Line="1" Column="1" />
+      <File FileName="ExchangeService/Implementations/Realisations/OrderImplementation.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ExchangeService" expanded="True">
+            <Node name="ExchangeService" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="DataBase" expanded="True">
+                <Node name="Repository" expanded="True" />
+              </Node>
+              <Node name="Implementations" expanded="True">
+                <Node name="Abstractions" expanded="True" />
+                <Node name="Realisations" expanded="True">
+                  <Node name="OrderImplementation.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="DashBoard" expanded="True">
+                  <Node name="Index.cshtml" expanded="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="js" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.ExchangeService PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
